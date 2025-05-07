@@ -23,6 +23,38 @@ This project focuses on building a binary classification model to predict the li
 
 ---
 
+## Exploratory Data
+
+### Loan Status Distribution
+- The majority of loans are either Fully Paid or Current, indicating successful repayment or active loans.
+- Charged Off loans — used to define the target class — make up a minority of the data, confirming a significant class imbalance.
+- Less frequent statuses (e.g., Late, Default, In Grace Period) were identified as rare and may require grouping or exclusion to simplify modeling.
+
+### Target Variable - default
+- Create a binary variable column
+    - 1 = Charged Off (default)
+    - 0 = all other loan issue
+
+---
+
+## Data Cleaning
+
+### Filter Useful columns 
+- Carefuly choosing important columns and import it into new dataframe
+- Reduced from 152 columns to 25 meaningful columns
+
+### Data Type Cleaning
+- Remove % symbol from percentage feature such as int_rate, revol_util
+- Parse emp_length as number of years
+- Convert issue_d to datetime
+
+### Missing Values
+- Drop columns with more than 50% missing value
+- Remove column with only on unique value
+- Drop rows with missing key features
+
+---
+
 ## Tools & Libraries 
 - Python: pandas, numpy, sklearn
 - SQL: PostSQL
