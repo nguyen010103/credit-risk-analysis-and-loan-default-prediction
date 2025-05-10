@@ -55,6 +55,25 @@ This project focuses on building a binary classification model to predict the li
 
 ---
 
+## Data Engineering and Preprocessing
+
+### Engineered Features
+- loan_to_income = loan_amnt / annual_inc
+- credit_utilization = revol_bal * revol_util / 100
+- debt_to_income = installment / (annual_inc / 12)
+- log_annual_inc = log(annual_inc)
+
+### Redundant Columns 
+- Create visualization for data correlation
+- Drop redundant columns such as 'fico_range_high', 'revol_bal', 'loan_to_income'
+
+### Data Preprocessing
+- One-hot encode nominal categorical variables
+- Scaled numeric features using StandardScaler, excluding default column
+
+### Outputs
+- Clean saved engineered dataset under csv file
+
 ## Tools & Libraries 
 - Python: pandas, numpy, sklearn
 - SQL: PostSQL
@@ -64,6 +83,10 @@ This project focuses on building a binary classification model to predict the li
 
 ## Status 
 - Project setup & environment
+- Data cleaning
+- Exploratory Data Analysis (EDA)
+- Feature engineering
+- Data preprocessing
 
 ---
 
