@@ -74,6 +74,55 @@ This project focuses on building a binary classification model to predict the li
 ### Outputs
 - Clean saved engineered dataset under csv file
 
+---
+
+## Data Modeling 
+
+### Linear Regression Model
+- Trained using GridSearchCV model
+- Shows moderate performance, with an ROC-AUC of 0.71
+- Model captures 67% of actual defaulters (recall), its precision for the default class is low (0.31)
+
+### Random Forest Classifier
+- Trained as a benchmark model before XGBoost
+- Performed reasonably well on accuracy and recall
+- Helped establish baseline performance
+- Served as a comparative reference during threshold tuning and final model selection
+
+### Baseline XGBoost
+- Trained an initial XGBoost classifier
+- ROC-AUC score: **0.72**
+- Initial F1 score: ~**0.39**
+- Confusion Matrix:
+  - True Positives: 33,312
+  - False Negatives: 15,948
+  - False Positives: 72,019
+  - True Negatives: 132,078
+
+### Threshold Tuning
+- Evaluated model performance at different probability thresholds
+- Identified optimal threshold: **0.62**
+- Final scores:
+  - **Precision:** 0.390
+  - **Recall:** 0.428
+  - **F1 Score:** 0.408
+  - **Accuracy:** 76%
+
+### Custom Evaluation Function
+A reusable function was built inside script folder to:
+- Plot confusion matrix
+- Draw ROC and Precision-Recall curves
+- Visualize F1, precision, and recall scores at different thresholds
+
+### Key findings
+- XGBoost improved recall and ROC-AUC over Random Forest.
+- Threshold tuning helps adjust between false positives and false negatives.
+- Cost-sensitive or business-specific threshold selection is crucial.
+
+> This modular function enabled rapid evaluation of model improvements and guided the decision to adjust the classification threshold for better trade-offs between false positives and false negatives.
+
+---
+
 ## Tools & Libraries 
 - Python: pandas, numpy, sklearn
 - SQL: PostSQL
@@ -87,6 +136,7 @@ This project focuses on building a binary classification model to predict the li
 - Exploratory Data Analysis (EDA)
 - Feature engineering
 - Data preprocessing
+- Data Modeling
 
 ---
 
