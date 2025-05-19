@@ -123,9 +123,31 @@ A reusable function was built inside script folder to:
 
 ---
 
+## Risk Scoring & Customer Segmentation
+
+### Distribution of Risk Score
+- Created new risk_score column in the dataframe using model predict probability
+- Scaled risk_score column from 0 to 100
+- Visualized the result using histogram
+- Normal-shaped curve centered around 50
+- Most borrowers fall into a moderate risk category (scores between 30–70).
+
+### Risk Score by Loan Amount
+- Grouped the loan_amount by risk_score and created the loan_bucket column
+- Visualized the result using boxplot
+- Median risk increase with loan size
+- Borrowers requesting larger loans tend to carry higher risk.
+
+### Risk Score by Income 
+- Grouped the risk_score by loan_amount
+- Visualized the result using bar chart
+- Inverse relationship between income and risk.
+- Lower-income borrowers are substantially riskier than high-income ones.
+
+--- 
+
 ## Tools & Libraries 
 - Python: pandas, numpy, sklearn
-- SQL: PostSQL
 - Visualization: matplotlib, seaborn
 
 ---
